@@ -13,7 +13,8 @@ module.exports = {
         allowNull: false
       },
       shortlink: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        unique: true
       },
       createdAt: {
         allowNull: false,
