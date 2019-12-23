@@ -1,12 +1,11 @@
 <div class="container">
     <a href="/input">Add Link to cut</a>
-    <h1>Shorter Links</h1>
+    <h1>Shorter Links App</h1>
     <ul>
         <% for(let i=0; i<link.length; i++) {%>
-        <li><a href="<%= link[i].link %>" class="btn btn-primary" 
-            role="button"><%=link[i].link %></a>   
+        <li><%=link[i].link %> 
             <a href="<%= link[i].shortlink %>" class="btn btn-primary" 
-                role="button"><%= link[i].shortlink%></a>  
+                role="button">www.localhost.com:3000/<%= link[i].shortlink%></a>  
         </li>
         <% } %>
     </ul>
