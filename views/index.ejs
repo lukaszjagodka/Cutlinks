@@ -1,0 +1,14 @@
+<div class="container">
+    <a href="/input">Add Link to cut</a>
+    <h1>Shorter Links</h1>
+    <ul>
+        <% for(let i=0; i<link.length; i++) {%>
+        <li><a href="<%= link[i].link %>" class="btn btn-primary" 
+            role="button"><%=link[i].link %></a>   
+            <a href="<%= link[i].shortlink %>" class="btn btn-primary" 
+                role="button"><%= link[i].shortlink%></a>  
+        </li>
+        <% } %>
+    </ul>
+    
+</div>
