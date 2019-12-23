@@ -6,7 +6,7 @@ const Link =require('./database/models').Link
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({extended: false}))
 
-app.get('/', function (req, res) {
+app.get('/',(req, res)=>{
   Link.findAll({
     attributes: ['link', 'shortlink']
   }).then(link => {
@@ -14,11 +14,11 @@ app.get('/', function (req, res) {
   })
 })
  
-app.get('/input', function (req, res){
+app.get('/input',(req, res)=>{
   res.render('input.ejs', { alert: false })
 })
 
-app.post('/input', function (req, res){
+app.post('/input',(req, res)=>{
   let link = req.body.link;
   let shortLink = req.body.slink;
   let linkWithPrefix = link.indexOf('http') !== -1 ? link : `https://${link}`
@@ -47,7 +47,7 @@ app.post('/input', function (req, res){
   })
 })
 
-app.get('/:id', function (req, res){ 
+app.get('/:id',(req, res)=>{ 
   Link.findOne({
     where:{
       shortlink: req.params.id
